@@ -1,10 +1,13 @@
 /** swicher menu */
 #switcher { 
 	-moz-border-radius: 0 0 6px 6px;
+	-moz-box-shadow: 1px 3px 4px #000;
+	box-shadow: 1px 3px 4px #000;
+	
 	border-radius: 0 0 6px 6px;
 	text-indent: -9999px;
-	background: #dcdcdc;
-	margin: -10px 0 0;
+	background: #fff;
+	margin: -13px 8px 0;
 	padding: 5px 6px 0; 
 	list-style: none; 
 	height: 20px;
@@ -69,6 +72,13 @@ h1 {
 	color: #b22222;
 }
 
+h2 {
+	font: normal 18px Verdana;
+	line-height: 21px;
+	color: #222;
+	border-bottom: 1px dotted #666;
+} 
+
 p {
 	font: normal 16px Tahoma, Verdana, sans-serif;
 	line-height: 18px;
@@ -86,3 +96,14 @@ ul li {
 	font: normal 12px Georgia, Helvetica, sans-serif;
 	color: #b22222;
 }
+
+/* code */
+code pre {
+	padding: 12px 12px 12px 30px;
+	border-left: 2px dashed #b22222;
+	background: #f2f2f2;
+	font: normal 14px monospace, Monaco;
+	color: orange;
+}
+
+
