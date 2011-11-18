@@ -1,10 +1,10 @@
 /**
-	-=Style Switcher jQuery function=-
+	-=jQuery Style Switcher=-
  *
  * [arguments]:	
  * @place: 		element selector to apply menu ( e.g. $('body'), $('#head'), $('.here') )
  * @skinsPath:	path to advanced stylesheet
- * @styles: 	number of styles from 1 to n( st0 is reserved by default) 
+ * @styles: 	number of styles from 1 to n
  *
  * [usage example]: 
  *				var place = $('#shell'),
@@ -12,7 +12,7 @@
  *				style_witcher( placeholder, path, 2 );
  *
  * [About this]:
- * @version: 1.2 
+ * @version: 1.3 
  * @autor: www.Shift-Web.ru
  * @license: CC-BY-SA 3.0
  *
@@ -23,16 +23,17 @@ style_switcher = function( pl, sp, st ) {
 	//configuration
 	var	menu	  = $('<menu id="switcher"></menu>'),
 		data 	  = $.Storage.get('usr_style'),
-		items	  = '';
+		items	  = links = '';
 	
 	//apply style list
 	for( i = 1; i <= st; i++ ) {
-		var marker 	 = 'id="st'+ i +'" data-st="st'+ i +'"';
-		var items 	 = items + '<li '+ marker +'>['+ i +']</li>'; 
-		$('head').append('<link '+ marker +' rel="fake" media="screen" href="'+ sp +'st'+ i +'.css">');
+		var marker 	 = 'id="st'+ i +'" data-st="st'+ i +'"',
+			items 	 = items + '<li '+ marker +'>['+ i +']</li>',
+			links	 = links + '<link '+ marker +' rel="fake" media="screen" href="'+ sp +'st'+ i +'.css">';
 	}
 
-	//set menu
+	//construct dom
+	$('head').append(links);
 	$(pl).prepend(menu);
 	menu.html(items);
 
@@ -57,18 +58,3 @@ style_switcher = function( pl, sp, st ) {
 	});
 		
 } //end switcher
-	
-
-
-// IIFE document.ready
-$(function() {
-
-/* initialization */
-var placeholder = $('#shell'),
-	path = 'sc/';
-
-style_switcher( placeholder, path, 5 );	
-
-	
-});
-//end switcher
