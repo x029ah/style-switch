@@ -1,0 +1,16 @@
+/* styles */
+h1 { 
+ color: #006633;
+}
+
+p { 
+ color: #006633;
+}
+
+ul {
+ color: #f3f6f6;
+}
+
+#shell #content {
+  background: #bc8f8f !important;
+}
