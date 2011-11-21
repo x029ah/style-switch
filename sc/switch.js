@@ -2,11 +2,12 @@
 	-=jQuery Style Switcher=-
  *
  * [arguments]:	
- * @place: 		element selector to apply menu ( e.g. $('body'), $('#head'), $('.here') )
+ * @place: 	element selector to apply menu ( e.g. $('body'), $('#head'), $('.here') )
  * @skinsPath:	path to advanced stylesheet
  * @styles: 	number of styles from 1 to n
  *
  * [usage example]: 
+ * 
  * var place = $('#shell'),
  * path = 'sc/';
  * style_switcher( placeholder, path, 2 );
