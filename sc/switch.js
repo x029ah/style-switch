@@ -7,9 +7,9 @@
  * @styles: 	number of styles from 1 to n
  *
  * [usage example]: 
- *				var place = $('#shell'),
- *				path = 'sc/';
- *				style_witcher( placeholder, path, 2 );
+ * var place = $('#shell'),
+ * path = 'sc/';
+ * style_switcher( placeholder, path, 2 );
  *
  * [About this]:
  * @version: 1.3 
