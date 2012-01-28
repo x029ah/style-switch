@@ -1,0 +1,14 @@
+/* styles */
+h1 { 
+ font-width: 50px;
+}
+
+p { 
+ font-weight: normal;
+ font-size: 25px;
+}
+
+ul {
+ font-size: 20px;
+ font-family: Arial;
+}

@@ -11,6 +11,8 @@ ul {
  color: #223344;
 }
 
-#shell #content {
-  background: #faebd7 !important;
+#shell #content,
+#shell #content_font,
+#shell #content_layout {
+  background: #faebd7;
 }

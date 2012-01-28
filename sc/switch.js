@@ -1,36 +1,69 @@
 /**
-	-=jQuery Style Switcher=-
- *
- * [arguments]:	
- * @place: 	element selector to apply menu ( e.g. $('body'), $('#head'), $('.here') )
- * @skinsPath:	path to advanced stylesheet
- * @styles: 	number of styles from 1 to n
- *
- * [usage example]: 
+	-=[ jQuery Style Switcher ]=-
+ *  
+ * [What is the Style Switcher?]:
  * 
- * var place = $('#shell'),
- * path = 'sc/';
- * style_switcher( placeholder, path, 2 );
+ *      Simple script intended to build interactive sites with flexible design.
+ *      Using this you can allow user to modify color shemas, font and layout variants.
+ *      Switcher have a memory function based on local storage and can be used in multiple mode.
+ *
+ * [Arguments]:	
+ *
+ *      @place: 	element selector to apply menu ( e.g. $('body'), $('#head'), $('.here') );
+ *      @group:     style propetries group e.g. color, font or layout;
+ *      @skinsPath:	path to advanced stylesheets (every group need a different path);
+ *      @styles: 	number of styles from 1 to n;
+ *
+ * [Usage example for single mode]: 
+ * 
+ *      var place = $('#shell'),
+ *      path = 'sc/';
+ *      style_switcher( placeholder, path, 2 );
+ *
+ *
+ * [Usage example for multiply mode]: 
+ *
+ *      var place = $('#shell'),
+ *      group = 'color',
+ *      path  = 'sc/';
+ *      style_switcher( placeholder, path, 2, group );
+ *
  *
  * [About this]:
- * @version: 1.3 
- * @autor: www.Shift-Web.ru
- * @license: CC-BY-SA 3.0
  *
- */
+ *      @autor:     FroZen Code: www.Shift-Web.ru
+ *      @license:   CC-BY-SA 3.0
+ *      @version:   2.0 beta 
+ *
+ *
+ * [In future]:
+ *  
+ *      More optimized engine;
+ *      Support client side DB API for better performance & scalability;
+ *      Plagin oriented code style;
+ *      
+ *
  
-style_switcher = function( pl, sp, st ) {
-	
-	//configuration
-	var	menu	  = $('<menu id="switcher"></menu>'),
-		data 	  = $.Storage.get('usr_style'),
-		items	  = links = '';
+ **/
+ 
+style_switcher = function( pl, sp, st, gr ) {
+   
+    //self configuration
+    var group = ( gr !== undefined ) ? 'usr_style_' + gr : 'usr_style';
+	var	menu	  = $('<menu class="switcher" data-st-control="'+ group +'"></menu>'),
+		data 	  = $.Storage.get( group ),
+		items	  = links = unify = '';
+        
+    //unification parameter (use it for debug only): do random query argument in link href
+    //var unify = '?' + Math.floor( Math.random( 1, 30 ) * 200 );
+    
+    //console.log( group );
 	
 	//apply style list
 	for( i = 1; i <= st; i++ ) {
-		var marker 	 = 'id="st'+ i +'" data-st="st'+ i +'"',
+		var marker 	 = 'id="st'+ i +'" data-st="st'+ i + '_'+ group +'"',
 			items 	 = items + '<li '+ marker +'>['+ i +']</li>',
-			links	 = links + '<link '+ marker +' rel="fake" media="screen" href="'+ sp +'st'+ i +'.css">';
+			links	 = links + '<link '+ marker +' rel="fake" media="screen" href="'+ sp +'st'+ i +'.css'+ unify +'">'; 
 	}
 
 	//construct dom
@@ -41,21 +74,21 @@ style_switcher = function( pl, sp, st ) {
 	//check for choice & activate
 	if( data !== undefined ) {
 		$('link[data-st='+ data +']', 'head').attr('rel', 'stylesheet');
-		$('#'+ data, '#switcher').addClass('active');
+		$('li[data-st='+ data +']', '.switcher[data-st-control="'+ group +'"]').addClass('active');
 	}
 
-	//switch
-	$('#switcher li').click(function() {	
+	//switch engine
+	$('.switcher li').click(function() {	
 		var t = $(this).attr('data-st');
 		
 		//clear
 		$('link[data-st]', 'head').attr('rel','fake');
-		$('li', '#switcher').removeClass('active');
+		$('li', '.switcher[data-st-control="'+ group +'"]').removeClass('active');
 		
 		//set
 		$('link[data-st='+ t +']','head').attr('rel', 'stylesheet');
-		$(this).addClass('active');
-		$.Storage.set('usr_style', t);
+        this.setAttribute('class', 'active');
+		$.Storage.set( group, t );
 	});
 		
 } //end switcher

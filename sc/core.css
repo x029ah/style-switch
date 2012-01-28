@@ -1,9 +1,8 @@
 /** swicher menu */
-#switcher { 
+.switcher { 
 	-moz-border-radius: 0 0 6px 6px;
 	-moz-box-shadow: 1px 3px 4px #000;
-	box-shadow: 1px 3px 4px #000;
-	
+	box-shadow: 1px 3px 4px #000;	
 	border-radius: 0 0 6px 6px;
 	text-indent: -9999px;
 	background: #fff;
@@ -15,7 +14,7 @@
 }
 
 /* controls */
-#switcher li {
+.switcher li {
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	position: relative;
@@ -27,7 +26,7 @@
 } 
 
 /* control active style */
-#switcher li.active::after {
+.switcher li.active::after {
 	position: absolute;
 	text-indent: 0;
 	display: block;
@@ -38,16 +37,16 @@
 }
 
 /* control hover style */
-#switcher li:hover {
+.switcher li:hover {
 	box-shadow: inset 0 0 2px 3px #a3a3a3;
 }
 
 /* switcher controls styles */
-#st1 { background: #000;    } /* default 	 */
-#st2 { background: #663399; } /* violet 	 */
-#st3 { background: #663333; } /* chocolate 	 */
-#st4 { background: #680000; } /* dark red 	 */
-#st5 { background: #006633; } /* fresh green */
+#st1 { background: #000;    }   /* [1] */
+#st2 { background: #663399; } /* [2] */
+#st3 { background: #663333; } /* [3] */
+#st4 { background: #680000; } /* [4] */
+#st5 { background: #006633; } /* [5] */
 
 
 

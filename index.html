@@ -25,13 +25,27 @@
 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 		</div>
 
+		<h2>Demo area for font variants</h2>		
+		<p>Switcher automaticly create a fake links in head & build switch menu.</p>
+		<div id="content_font">
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		</div>
+
+		<h2>Demo area for layout switching</h2>		
+		<p>Switcher automaticly create a fake links in head & build switch menu.</p>
+		<div id="content_layout">
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		</div>
+
+
 		<h2>About style switcher</h2>
 		<ul>
 			<li>Two way automatic savings in local storage or cookies if ls unavailible;</li>
 			<li>Worked on HTML 5 data attributes;</li>
 			<li>Simple usage;</li>
 			<li>Unlimited stylesheets;</li>	
-			<li>Automated layout creation;</li>	
+			<li>Automated layout creation;</li>
+                                      <li>Multiple schemas mode;</li>	
 		</ul>
 
 
@@ -39,7 +53,7 @@
 		<ul>
 			<li>Supported browsers: IE6, IE7, IE8, IE9, IE10, FF, Opera, Chrome;</li>
 			<li>Requirements: jQuery 1.6.4 or higher, local storage pluggin;</li>
-			<li>version: 1.3</li>
+			<li>version: 2.0 beta</li>
 		</ul>
 		
 
@@ -49,6 +63,8 @@
 		
 <code><pre>
 /* 
+ [Single mode]
+
 @ placeholder: DOM selector to append swicher menu 
 @ path:		   path to you advanced style schemas
 @ [5]:		   number of advanced stylesheets 
@@ -56,9 +72,28 @@
 
 $(function() {
 var placeholder = $('#shell'),
-	path = 'sc/';
+      path = 'sc/';
  
 style_switcher( placeholder, path, 5 );	
+});
+</pre></code>
+
+<code><pre>
+/* 
+ [Multiple mode]
+
+@ placeholder: DOM selector to append swicher menu 
+@ group:               unical name of schema group
+@ path:		   unical path to you schemas folder contains styles
+@ [5]:		   number of stylesheets you want to switch 
+*/
+
+$(function() {
+var placeholder = $('#shell'),
+      group = 'colors',
+      path = 'sc/';
+ 
+style_switcher( placeholder, path, 3 );	
 });
 </pre></code>
 
@@ -70,12 +105,28 @@ style_switcher( placeholder, path, 5 );
 <script>
 $(function() {
 
-	/* cfg */
-	var placeholder = $('#content'),
-		path = 'sc/';
+/* cfg for [multiple] group */
+   var placeholderMultiple = $('#content'),
+   pathMultiple = 'sc/multiple/';
+   
+/* cfg for [font] group */
+   var placeholderFont = $('#content_font'),
+   groupFont = 'font',
+   pathFont = 'sc/font/';
+   
+/* cfg for [layout] group */
+   var placeholderLay = $('#content_layout'),
+   groupLay = 'layout',
+   pathLay = 'sc/layout/';
 
-	/* init */
-	style_switcher( placeholder, path, 5 );
+/* init of [multiple] group switcher */
+   style_switcher( placeholderMultiple, pathMultiple, 5 );
+
+/* init of [font] group switcher */
+   style_switcher( placeholderFont, pathFont, 4, groupFont );
+
+/* init of [layout] group switcher */
+   style_switcher( placeholderLay, pathLay, 3, groupLay );
 	
 });	
 
