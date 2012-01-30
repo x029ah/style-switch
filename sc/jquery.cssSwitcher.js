@@ -102,7 +102,7 @@
             $.Storage.set( g, t );
         });     
 
-    },
+    }
   };
 
   $.fn.cssSwitcher = function() {
