@@ -2,23 +2,22 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>jQuery Style Switcher</title>
+<title>jQuery CSS Switcher plugin</title>
 
 <!-- main style -->
 <link rel="stylesheet" media="screen" href="sc/core.css">
 
 <!-- jquery & storage plugin -->
 <script src="sc/jquery.min.js"></script>
-<script src="sc/jquery.Storage.js"></script>
 
-<!-- switcher --> 
-<script src="sc/switch.js"></script>
+<script src="sc/jquery.Storage.js"></script>
+<script src="sc/jquery.cssSwitcher.js"></script>
 
 <body>
 	<div id="shell">
 
 		<h1>jQuery Style Switcher with Local Storage & Cookies support</h1>
-
+		
 		<h2>Demo area</h2>		
 		<p>Switcher automaticly create a fake links in head & build switch menu.</p>
 		<div id="content">
@@ -38,14 +37,14 @@
 		</div>
 
 
-		<h2>About style switcher</h2>
+		<h2>About CSS Switcher jQuery plugin</h2>
 		<ul>
 			<li>Two way automatic savings in local storage or cookies if ls unavailible;</li>
 			<li>Worked on HTML 5 data attributes;</li>
 			<li>Simple usage;</li>
 			<li>Unlimited stylesheets;</li>	
 			<li>Automated layout creation;</li>
-                                      <li>Multiple schemas mode;</li>	
+            <li>Multiple schemas mode;</li>	
 		</ul>
 
 
@@ -53,47 +52,37 @@
 		<ul>
 			<li>Supported browsers: IE6, IE7, IE8, IE9, IE10, FF, Opera, Chrome;</li>
 			<li>Requirements: jQuery 1.6.4 or higher, local storage pluggin;</li>
-			<li>version: 2.0 beta</li>
+			<li>version: 1.0 beta</li>
 		</ul>
-
+		
 
 		<h2>Usage</h2>
 		<p>You can switch the style schemas. Choice will be saved in local storage or cookies.</p>
 		<p>Before, you need to create your alternatice stylesheets in '/sc' directory named st1.css, st2.css, st3.css etc. Then use this code to call switcher whith next arguments:</p>
-
+		
 <code><pre>
-/* 
- [Single mode]
-
-@ placeholder: DOM selector to append swicher menu 
-@ path:		   path to you advanced style schemas
-@ [5]:		   number of advanced stylesheets 
-*/
-
 $(function() {
-var placeholder = $('#shell'),
-      path = 'sc/';
- 
-style_switcher( placeholder, path, 5 );	
+
+	/* single */
+	$('#content').cssSwitcher({
+	   path: '/pathToCSS/', 
+	   range: 3
+	});
+
 });
 </pre></code>
 
 <code><pre>
-/* 
- [Multiple mode]
-
-@ placeholder: DOM selector to append swicher menu 
-@ group:               unical name of schema group
-@ path:		   unical path to you schemas folder contains styles
-@ [5]:		   number of stylesheets you want to switch 
-*/
 
 $(function() {
-var placeholder = $('#shell'),
-      group = 'colors',
-      path = 'sc/';
- 
-style_switcher( placeholder, path, 3 );	
+
+	/* with group */
+	$('#content').cssSwitcher({
+	   group: 'fonts',   
+	   path: '/pathToCSS/',
+	   range: 3,
+	});
+
 });
 </pre></code>
 
@@ -103,34 +92,30 @@ style_switcher( placeholder, path, 3 );
 	</div>
 
 <script>
-$(function() {
 
-/* cfg for [multiple] group */
-   var placeholderMultiple = $('#content'),
-   pathMultiple = 'sc/multiple/';
-   
-/* cfg for [font] group */
-   var placeholderFont = $('#content_font'),
-   groupFont = 'font',
-   pathFont = 'sc/font/';
-   
-/* cfg for [layout] group */
-   var placeholderLay = $('#content_layout'),
-   groupLay = 'layout',
-   pathLay = 'sc/layout/';
+	$(function() {
+		
+		$('#content').cssSwitcher({
+			range: 5,
+			path:  'sc/multiple/'
+		});
 
-/* init of [multiple] group switcher */
-   style_switcher( placeholderMultiple, pathMultiple, 5 );
+		$('#content_font').cssSwitcher({
+			range: 4,
+			path:  'sc/font/',
+			group: 'font'			
+		});
 
-/* init of [font] group switcher */
-   style_switcher( placeholderFont, pathFont, 4, groupFont );
+		$('#content_layout').cssSwitcher({
+			range: 3,
+			path:  'sc/layout/',
+			group: 'layout'			
+		});
+				
+	});
 
-/* init of [layout] group switcher */
-   style_switcher( placeholderLay, pathLay, 3, groupLay );
-
-});	
+</script>
 
 
-</script>	
 </body>
 </html>

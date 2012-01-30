@@ -5,9 +5,9 @@
 	box-shadow: 1px 3px 4px #000;	
 	border-radius: 0 0 6px 6px;
 	text-indent: -9999px;
-	background: #fff;
-	margin: -13px 8px 0;
+	margin: -14px 8px 0;
 	padding: 5px 6px 0; 
+	background: #fff;
 	list-style: none; 
 	height: 20px;
 	width: 105px;
@@ -26,14 +26,14 @@
 } 
 
 /* control active style */
-.switcher li.active::after {
+.switcher li.activ::after {
 	position: absolute;
 	text-indent: 0;
 	display: block;
 	content: "^";
 	color: #000;
+	top: 14px;
 	left: 4px;
-	top: 13px;
 }
 
 /* control hover style */
@@ -41,12 +41,12 @@
 	box-shadow: inset 0 0 2px 3px #a3a3a3;
 }
 
-/* switcher controls styles */
-#st1 { background: #000;    }   /* [1] */
-#st2 { background: #663399; } /* [2] */
-#st3 { background: #663333; } /* [3] */
-#st4 { background: #680000; } /* [4] */
-#st5 { background: #006633; } /* [5] */
+/* switcher default controls styles + group controls */
+li#st1_usr_style, li#st1_usr_style_font, li#st1_usr_style_layout { background: #000;    }   /* [1] */
+li#st2_usr_style, li#st2_usr_style_font, li#st2_usr_style_layout { background: #663399; } /* [2] */
+li#st3_usr_style, li#st3_usr_style_font, li#st3_usr_style_layout { background: #663333; } /* [3] */
+li#st4_usr_style, li#st4_usr_style_font, li#st4_usr_style_layout { background: #680000; } /* [4] */
+li#st5_usr_style, li#st5_usr_style_font, li#st5_usr_style_layout { background: #006633; } /* [5] */
 
 
 
@@ -57,10 +57,10 @@
 }
 
 #content {
-	padding: 12px 8px;
-	margin: 30px 0;
 	border-radius: 20px;
+	padding: 12px 8px;
 	background: #ccc;
+	margin: 30px 0;
 }
 
 /* inside contents */
@@ -72,10 +72,10 @@ h1 {
 }
 
 h2 {
+	border-bottom: 1px dotted #777;
 	font: normal 18px Verdana;
 	line-height: 21px;
 	color: #222;
-	border-bottom: 1px dotted #666;
 } 
 
 p {
@@ -91,17 +91,17 @@ ul {
 }
 
 ul li { 
-	border-bottom: 1px dotted #ff0000;
 	font: normal 12px Georgia, Helvetica, sans-serif;
+	border-bottom: 1px dotted #ff0000;
 	color: #b22222;
 }
 
 /* code */
 code pre {
-	padding: 12px 12px 12px 30px;
-	border-left: 2px dashed #b22222;
-	background: #f2f2f2;
 	font: normal 14px monospace, Monaco;
+	border-left: 2px dashed #b22222;
+	padding: 12px 12px 12px 30px;
+	background: #f2f2f2;
 	color: orange;
 }
 
