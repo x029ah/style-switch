@@ -1,136 +1,375 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>jQuery Style Switcher</title>
+<title></title>
 
-<!-- main style -->
-<link rel="stylesheet" media="screen" href="sc/core.css">
+<!-- libraries -->
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/jquery.Storage.js"></script>
+<script src="scripts/jquery.cssSwitcher.js"></script>
 
-<!-- jquery & storage plugin -->
-<script src="sc/jquery.min.js"></script>
-<script src="sc/jquery.Storage.js"></script>
 
-<!-- switcher --> 
-<script src="sc/switch.js"></script>
+<!-- styles -->
+<link href="layout.css" rel="stylesheet" media="screen" />
+<link href="controls.css" rel="stylesheet" media="screen" />
 
+
+</head>
 <body>
-	<div id="shell">
 
-		<h1>jQuery Style Switcher with Local Storage & Cookies support</h1>
+<div id="shell">
 
-		<h2>Demo area</h2>		
-		<p>Switcher automaticly create a fake links in head & build switch menu.</p>
-		<div id="content">
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-		</div>
+	<header id="header">
+		<a href="#" id="logo">CSS Switch jQuery plugin</a>
+		<p>allow you to create a Clever Design Simple</p>
+	</header>
+	
+	<section id="base">
+		
 
-		<h2>Demo area for font variants</h2>		
-		<p>Switcher automaticly create a fake links in head & build switch menu.</p>
-		<div id="content_font">
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-		</div>
+		<section class="wrapper">
+			<ul class="tabs">
+				<li class="current">Что такое CSS Switcher</li>
+				<li>Возможности</li>
+				<li>Требования</li>
+				<li>Test it!</li>
+				<li>Скачать</li>
+			</ul>
+			<div class="content description visible">
+				<p>Современные тенденции требуют от дизайна быть не просто красивым, но и кроссплатформенным. Бурное развитие мобильных технологий привело к появлению огромного числа устройств с различными разрешениями экрана, что в достаточной степени усложнило разработку карскасов верстки.</p> 
+				<p>CSS Switcher помогает делать дизайны умными и красивыми одновременно, не прибегая к каким либо изощренным методикам. Он легок, прост в использовании и кроссбраузерен.</p>
+				<p>В какой-то степени данный plugin можно рассматривать в качестве альтернативы @media-queries, описаных в спецификации CSS3, но не поддреживаемых многими старыми браузерами.</p>
+			</div>
 
-		<h2>Demo area for layout switching</h2>		
-		<p>Switcher automaticly create a fake links in head & build switch menu.</p>
-		<div id="content_layout">
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-		</div>
+			<div class="content description">
+				<p>CSS Switcher может использоваться для управления вариантом отображения сайта в нескольких режимах:</p>
+				<ul class="list">
+					<li>Переключение цветовых схем</li>
+					<li>Переключение стилей шрифтов</li>
+					<li>Автоматическая адаптация дизайна под разрешение экрана</li>
+				</ul>			
+				<p>Плагин поддерживает многопоточность, что позволяет использовать одновременно несколько css-схем или стилей. Гибкое и умное API гарантирует простоту настройки, а возможность хранить в памяти выбранную пользователем схему отображения на стороне клиента обеспечивает комфортное применение.</p>
+				
+				<ul class="list">
+					<li>Подрежка HTML5 Local Storage</li>
+					<li>Поддержка Cookies для старых браузеров</li>
+					<li>Гибкое и понятное API</li>
+				</ul>
+
+				<p>Стоит сказать, что данное решение, на данном этапе, ни в коей степени не претендует на роль каркасаного фреймфорка и предоставляет лишь базовый набор идей для организации ваших css стилей. Смотрите примеры и варианты сеток.</p>
+			</div>
+
+			<div class="content description">
+				<p>CSS Switcher не имеет каких либо жестких требований. Достаточно подключить все библиотеки, подготовить css-схемы и оформить переключатели в соответсвии с требованиями макета.</p>
+				<ul class="list">
+					<li>jQuery 1.6.4</li>
+					<li>jQuery local storage</li>
+				</ul>
+				<p>Часть логики опирается на новые возможности HTML5, такие, как local storage, однако, CSS Switcher способен работать со старыми браузерами вплоть до IE 6.</p>
+			</div>
+
+			<div class="content description">
+				<div id="test">
+					<p>Пример работы для переключения шрифтов.</p>
+				</div>
+
+				<div id="test2">
+					<p>Пример работы для переключения цветов.</p>
+				</div>
+			</div>
 
 
-		<h2>About style switcher</h2>
-		<ul>
-			<li>Two way automatic savings in local storage or cookies if ls unavailible;</li>
-			<li>Worked on HTML 5 data attributes;</li>
-			<li>Simple usage;</li>
-			<li>Unlimited stylesheets;</li>	
-			<li>Automated layout creation;</li>
-                                      <li>Multiple schemas mode;</li>	
+			<div class="content description">
+				<p>Текущая версия jQuery CSS Switcher <i>1.5 Beta</i>:</p>
+
+				<ul class="list">
+					<li>Git: <a href="https://github.com/x029ah/style-switch">скачать CSS Switcher</a></li>
+				</ul>
+
+				<p>Вы можете очень помочь проекту предложив свои варианты разметки. Возможно, когда-то это станет полноценным фрэймворком.</p>
+
+			</div>
+		</section>
+
+		
+		<section class="wrapper">
+		<ul class="tabs">
+			<li class="current">API reference</li>
+			<li>Grid reference</li>
+			<li>HTML & CSS reference</li>
+			<li>Множественное использование</li>
 		</ul>
 
 
-		<h2>Main</h2>
-		<ul>
-			<li>Supported browsers: IE6, IE7, IE8, IE9, IE10, FF, Opera, Chrome;</li>
-			<li>Requirements: jQuery 1.6.4 or higher, local storage pluggin;</li>
-			<li>version: 2.0 beta</li>
-		</ul>
+		<div class="content listing visible">
+		<p>CSS Switcher API очень простое и позволяет создавать неограниченное число схем css, каждая из которых будет независима от остальных. Также вы имеете возможность управлять стилем оформления переключателей для разных ситуаций.</p>
 
+<code class="js"><pre>
+//пример использования для автомачиеской адаптации под разрешение экрана
+$(function(){
+	
+   $('body').cssSwitcher({
+       grid: 'auto',
+       step: 'mob|smin|wmin',
+       path: '/schemas/grids/'
+   });
 
-		<h2>Usage</h2>
-		<p>You can switch the style schemas. Choice will be saved in local storage or cookies.</p>
-		<p>Before, you need to create your alternatice stylesheets in '/sc' directory named st1.css, st2.css, st3.css etc. Then use this code to call switcher whith next arguments:</p>
+});				
+</pre></code>
 
-<code><pre>
-/* 
- [Single mode]
+<p>Описание аргументов вызова:</p>
+<code class="API"><pre>
 
-@ placeholder: DOM selector to append swicher menu 
-@ path:		   path to you advanced style schemas
-@ [5]:		   number of advanced stylesheets 
-*/
+@grid: переключение плагина в режим автоматической адаптации css схемы под разрешение экрана 
+@step: шаги срабатывания: mob, smin, wmin; смотрите таблицу Grid Reference 
+@path: путь до папки со схемами сеток
 
-$(function() {
-var placeholder = $('#shell'),
-      path = 'sc/';
- 
-style_switcher( placeholder, path, 5 );	
+</pre></code>
+
+<p>Плагин будет автоматически подключать нужный css в зависимости от разрешения дисплея. Доступны несколько вариантов, которые позволяют уточнить пороги переключения. Например, для того, чтобы активировать css для мобильных устройств достаточно указать параметр <i>mob</i>( <i>mob.css</i> должен лежать в папке соответствующей <i>path</i> ).</p>
+
+<code class="js"><pre>
+//Пример запуска CSS Switcher для коррекции размера шрифтов
+$(function(){
+	
+   $('#content').cssSwitcher({
+      group: 'fonts',   
+      path: '/pathToCSS/',
+      range: 3,
+  });
+
+});	
+</pre></code>
+
+<p>Синтаксис в примере выше ничем не отличается от традиционного jQuery API. Требуется указать селектор, к которому будет прикреплено меню переключателя, уникальное имя группы, количество стилей и путь до папки с css схемой.</p>
+<p>Следует отметить, что имена css файлов обязательно должны соответствовать шаблону: <i>st1.css</i>, <i>st2.css</i>, <i>st3.css</i> и т.д.</p>
+
+<code class="js"><pre>
+//Управление стилем меню переключения и отладка
+$(function(){
+	
+   $('#selector').cssSwitcher({
+      group: 'colors',   
+      path: '/pathToCSS/',
+      controls: 'menu',
+      range: 10,
+      debug: 1
+  });
+
 });
 </pre></code>
 
-<code><pre>
-/* 
- [Multiple mode]
+<p>Для предотвращения кэширования стилей на момент отладки используется <i>debug: 1</i>.</p>
+<p>Чтобы выбрать стиль вывода меню переключателей используйте <i>controls</i>. Без явного указания переключатели будут оформлены в теги <i>&lt;ul&gt;</i>. Также доступны варианты <i>controls: 'menu'</i>( аналог ul для HTML5 ), <i>controls: 'div'</i> и <i>controls: 'plain'</i> для вывода в виде строчного блока.</p>
+<p>Чтобы узнать больше смотрите HTML reference.</p>
 
-@ placeholder: DOM selector to append swicher menu 
-@ group:               unical name of schema group
-@ path:		   unical path to you schemas folder contains styles
-@ [5]:		   number of stylesheets you want to switch 
-*/
+		</div><!--#API reference-->
 
+		<div class="content listing">
+
+		<table cellpadding="0">
+		<caption>Таблица описывает соответсвие параметров запуска плагина, порогов переключения css схемы и нужных для работы стилей.</caption>
+			<thead>
+				<tr>
+					<td>mobile</td>
+					<td>laptop</td>
+					<td>wide</td>
+					<td>параметры</td>
+					<td>необходимые css</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td collspan="2">480px - 960px</td>
+					<td>1024px - 1280px</td>
+					<td>1280px - &#8734;</td>
+					<td>mob|smin|wmin</td>
+					<td>mob.css; smin.css; wmin.css</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1024px - 1440px</td>
+					<td>1440px - &#8734;</td>
+					<td>mob|smax|wmax</td>
+					<td>mob.css; smax.css; wmax.css</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>mobile</td>
+					<td>laptop</td>
+					<td>wide</td>
+					<td>параметры</td>
+					<td>необходимые css</td>
+				</tr>				
+			</tfoot>
+		</table>
+		
+		<p>Обратите внимание на то, что нельзя указывать вместе <i>smax</i> и <i>wmin</i> т.к. они описывают одни и те-же разрешения. Позже это будет исправлено.</p>
+		<p>По мере необходимости список режимов будет пополняться. Не увидели нужного? Пишите на <a href="mailto:shift@shift-web.ru">shift@shift-web.ru</a> и он обязательно появится.</p>
+
+		</div><!--#Grid reference-->
+
+
+		<div class="content listing">
+
+		<p>CSS Switcher автоматически создает нужную для переключателей HTML разметку и подключает в &lt;head&gt; стили.</p>
+		<p>В этой секции приведены фрагменты такой разметки для лучшего понимания того, какие селекторы могут быть использованы для оформления с помощью CSS.</p>
+
+<code class="js"><pre>
+//пример запуска для управления схемой шрифтов
 $(function() {
-var placeholder = $('#shell'),
-      group = 'colors',
-      path = 'sc/';
- 
-style_switcher( placeholder, path, 3 );	
+
+		$('#content').cssSwitcher({
+		    range: 5,
+		    group: 'font',
+		    path:  'schema/font/',
+		});	
+
 });
+
 </pre></code>
 
-	<p>Of course, you can style it using css your like.</p>
+		<p>В обычном случае меню переключателя строится на базе маркированного списка <i>&lt;ul&gt;</i>:</p>
 
-		<!-- Author: http://www.shift-web.ru/ -->
-	</div>
+<code class="html"><pre>
+&lt;div id="content"&gt; &lt;!-- селектор к которому крепится меню --&gt;
+&lt;ul class="switcher" data-gr="font"&gt;
+	&lt;li id="st1_usr_style" data-gr="font" data-st="st1_font"&gt;[1]&lt;/li&gt;
+	&lt;li id="st2_usr_style" data-gr="font" data-st="st2_font"&gt;[2]&lt;/li&gt;
+	&lt;li id="st3_usr_style" data-gr="font" data-st="st3_font"&gt;[3]&lt;/li&gt;
+	&lt;li id="st4_usr_style" data-gr="font" data-st="st4_font"&gt;[4]&lt;/li&gt;
+	&lt;li id="st5_usr_style" data-gr="font" data-st="st5_font"&gt;[5]&lt;/li&gt;
+&lt;/ul&gt;
+...
+	
+</pre></code>
 
+		<p>Таким образом, для оформления переключателей надлежащим образом можно использовать селекторы:</p>
+
+<code class="css"><pre>
+//общие селекторы по каркасному родителю
+ul.switcher { }
+.switcher li { }
+
+//уникальные идентификаторы группы
+#st1_usr_style { }
+#st2_usr_style { }
+#st3_usr_style { }
+#st4_usr_style { }
+#st5_usr_style { }
+</pre></code>
+
+		<p>Таким образом, вы можете оформить как каждый управляющий элемент индивидуально, так и определить общие правила оформления.</p>
+		<p>Для стилизации рекомендуется использовать графические изображения собранные в спрайты.</p>
+
+		</div><!--#HTML reference-->
+
+
+		<div class="content listing">
+		<p>Плагин поддерживает многопоточность. Можно создавать неограниченное количество схем с неограниченным количеством вариантов оформления всего, что угодно.</p>
+		<p>Пример запуска в многопоточном режиме:</p>
+
+<code class="js"><pre>
+
+$(function() {
+
+	//grid auto switcher
+	$('body').cssSwitcher({
+		grid: 'auto',
+		step: 'mob|smax|wmax',
+		path: '/schemas/grids/'      
+	});
+
+
+	//font switcher
+	$('#selector').cssSwitcher({
+		range: 5,
+		group: 'fonts',
+		path:  'schemas/fonts/'
+	});
+
+	//colors switcher
+	$('#selectorX').cssSwitcher({
+		range: 28,
+		path:  'schemas/colors/',
+		group: 'colors',
+		controls: 'menu'                  			
+	});
+
+	//layout align switcher
+	$('#selectorY').cssSwitcher({
+		range: 12,
+		path:  'schemas/layout/',
+		group: 'layout',
+		controls: 'plain'			
+	});
+			
+});	
+
+</pre></code>
+		<p>Каких-либо жетских ограничений нет, но помните о важности чувства меры. И да прибудет с вами сила.</p>
+
+		</div><!--#CSS reference-->
+
+
+		</section><!--#tabs wrp-->
+
+	</section>
+	
+</div>
+
+<!-- scripts -->
 <script>
 $(function() {
 
-/* cfg for [multiple] group */
-   var placeholderMultiple = $('#content'),
-   pathMultiple = 'sc/multiple/';
-   
-/* cfg for [font] group */
-   var placeholderFont = $('#content_font'),
-   groupFont = 'font',
-   pathFont = 'sc/font/';
-   
-/* cfg for [layout] group */
-   var placeholderLay = $('#content_layout'),
-   groupLay = 'layout',
-   pathLay = 'sc/layout/';
+	//.tabs core
+	$('.content:not(.visible)').hide();
 
-/* init of [multiple] group switcher */
-   style_switcher( placeholderMultiple, pathMultiple, 5 );
+  	$('ul.tabs').delegate('li:not(.current)', 'click', function( e ) {
+    	$(this).addClass('current').siblings().removeClass('current')
+    	.parents('.wrapper').find('.content').removeClass('visible').hide()
+    	.eq($(this).index())
+    	.fadeIn(150);
 
-/* init of [font] group switcher */
-   style_switcher( placeholderFont, pathFont, 4, groupFont );
+    	e.preventDefault;
+  });
 
-/* init of [layout] group switcher */
-   style_switcher( placeholderLay, pathLay, 3, groupLay );
+  /* switchers */
 
-});	
+	//grid auto switcher
+	$('body').cssSwitcher({
+		grid: 'auto',
+		step: 'mob|smax|wmax',
+		path: 'schemas/grids/'      
+	});
 
 
-</script>	
+	//font switcher
+	$('#test').cssSwitcher({
+		range: 5,
+		group: 'fonts',
+		path:  'schemas/fonts/'
+	});
+
+	//colors switcher
+	$('#test2').cssSwitcher({
+		range: 6,
+		path:  'schemas/colors/',
+		group: 'colors',
+		controls: 'menu'                  			
+	});
+			
+});
+
+</script>
+
+<footer id="footer">
+	<div>
+		<p>jQuery CSS Switcher &copy; FroZen Code: 2012</p>
+	</div>
+</footer>
+
 </body>
 </html>

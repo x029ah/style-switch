@@ -1,0 +1,10 @@
+/* 	
+	schema: font 
+	variant: 1 
+*/
+
+#shell p { 
+	line-height: 14px;
+	font-size: 11px;
+}
+
