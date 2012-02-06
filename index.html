@@ -14,6 +14,30 @@
 <link href="layout.css" rel="stylesheet" media="screen" />
 <link href="controls.css" rel="stylesheet" media="screen" />
 
+<!--[if (gte IE 6) & (lt IE 9)]>
+  <script>
+	E = ['footer','header','menu','mark','section','time'];
+	for( c in E ) { 
+	  document.createElement(E[c]); 
+	}
+  </script>
+  <style>
+	* html a#logo {
+	   background-image: none !important;
+	   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/logo.png', sizingMethod='crop');
+	}
+
+	* html body {
+	   background-image: none !important;
+	}
+
+	* html #footer {
+	   background-image: none !important;
+	   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bottom.png', sizingMethod='scale');
+	}
+  </style>
+<![endif]-->
+
 
 </head>
 <body>

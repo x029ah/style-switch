@@ -1,5 +1,5 @@
 /**
-    -=[ CSS Switcher jQuery plugin version 1.4 Beta ]=-
+    -=[ CSS Switcher jQuery plugin version 1.5 Beta ]=-
  *  
  * [What is the CSS Switcher?]:
  * 
@@ -89,7 +89,7 @@
  *
  *      @autor:     FroZen Code: www.Shift-Web.ru
  *      @license:   MIT
- *      @version:   1.4 Beta   
+ *      @version:   1.5 Beta   
  * 
  **/
 
@@ -136,7 +136,7 @@
         data    = $.Storage.get( group );        
         
  
-        //parse grid variants ( еще думать, например если мудак задаст грид для простой схемы )    
+        //parse grid variants  
         if( gm !== null ) {
 
             group   = 'grid';            

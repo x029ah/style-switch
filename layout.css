@@ -8,6 +8,10 @@ body {
 	margin: 0;
 }
 
+section, header, footer {
+	display: block;
+}
+
 p {
 	font-family: Verdana, sans-serif;
 }
@@ -121,6 +125,7 @@ table, thead, tbody, tfoot, caption, td, tr, th  {
 	margin: 0 0 20px;
 	display: block;
 	z-index: 10;
+	clear: both; 
 }
 
 #base .description {
@@ -272,6 +277,7 @@ table tbody td:hover {
 	list-style-type: none;
 	letter-spacing: 1px;
 	margin-left: 40px;
+   	clear: both; 
 }
 
 .tabs li {
@@ -281,6 +287,7 @@ table tbody td:hover {
 	padding: 5px 8px 8px;
 	background: #dcdcdc;
 	position: relative;
+	*display: inline;
 	margin: 2px 4px;
 	color: #243f1f;
 	float: left;
