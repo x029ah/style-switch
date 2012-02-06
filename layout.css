@@ -83,6 +83,16 @@ table, thead, tbody, tfoot, caption, td, tr, th  {
 	padding: 0;
 }
 
+#footer a {
+	border-bottom: 1px dashed #f5f5f5;
+	text-decoration: none;
+	color: #fafc5d;
+}
+
+#footer a:hover {
+	color: orange;
+}
+
 /* Core styles */
 #header #logo {
 	background: transparent url('images/logo.png') 0 0 no-repeat;	
